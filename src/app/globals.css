@@ -1,9 +1,7 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+@custom-variant rano (&:where([data-theme=rano], [data-theme=rano] *));
 
 @theme inline {
   --color-background: var(--background);
@@ -12,12 +10,17 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 body {
   background: var(--background);

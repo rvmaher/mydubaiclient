@@ -1,0 +1,21 @@
+{
+    "products": {
+        "cart": "Toevoegen aan winkelwagen"
+    },
+    "auth": {
+        "signIn": "Inloggen",
+        "signUp": "Registreren",
+        "welcome": "Welkom terug! Voer je gegevens in.",
+        "createAccount": "Maak je account aan om te beginnen.",
+        "googleSignIn": "Inloggen met Google",
+        "googleSignUp": "Registreren met Google",
+        "or": "OF",
+        "email": "E-mailadres",
+        "password": "Wachtwoord",
+        "confirmPassword": "Bevestig wachtwoord",
+        "emailPlaceholder": "jij@voorbeeld.nl",
+        "passwordPlaceholder": "••••••••",
+        "noAccount": "Geen account?",
+        "hasAccount": "Al een account?"
+    }
+}
