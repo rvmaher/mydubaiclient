@@ -1,8 +1,26 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
   reactCompiler: true,
+  images: {
+    domains: [
+      "images.unsplash.com",
+      "via.placeholder.com",
+      "plus.unsplash.com",
+    ],
+    localPatterns: [
+      {
+        pathname: "/images/**",
+        search: "",
+      },
+    ],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+      },
+    ],
+  },
 };
 
 export default nextConfig;
