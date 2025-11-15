@@ -87,6 +87,7 @@ const ReviewSlider: React.FC = () => {
 
         <div className="mt-12 flex justify-center items-center space-x-6">
           <button
+            type="button"
             onClick={goToPrev}
             disabled={index === 0}
             className={`transition-opacity duration-200 ${index === 0 ? "opacity-40 cursor-not-allowed" : "opacity-80 hover:opacity-100"}`}
@@ -100,6 +101,7 @@ const ReviewSlider: React.FC = () => {
           </span>
 
           <button
+            type="button"
             onClick={goToNext}
             disabled={index === totalReviews - 1}
             className={`transition-opacity duration-200 ${index === totalReviews - 1 ? "opacity-40 cursor-not-allowed" : "opacity-80 hover:opacity-100"}`}

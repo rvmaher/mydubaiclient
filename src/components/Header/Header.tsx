@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { FaRegUser as UserIcon } from "react-icons/fa6";
 import { cn } from "@/utils/cn";
 import Modal from "../Modal/Modal";
@@ -10,9 +10,9 @@ const Header = () => {
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
   const [signIn, setSignIn] = useState(false);
 
-  const handleScroll = () => {
+  const handleScroll = useCallback(() => {
     setIsScrolled(window.scrollY > 50);
-  };
+  }, []);
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -75,6 +75,7 @@ const Header = () => {
         <div className="mx-auto max-w-7xl flex justify-between items-center">
           <div className="flex items-center space-x-3 md:space-x-4">
             <button
+              type="button"
               className={`text-2xl transition-colors ${isScrolled ? "text-gray-900" : "text-white"} lg:hidden`}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
@@ -88,11 +89,13 @@ const Header = () => {
 
           <div className="flex items-center space-x-3 sm:space-x-4">
             <button
+              type="button"
               className={`hidden sm:block text-sm font-semibold transition-colors ${isScrolled ? "text-gray-900" : "text-white"}`}
             >
               Sell With Us
             </button>
             <button
+              type="button"
               onClick={() => setSignIn(true)}
               className={`
                         flex items-center space-x-1 sm:space-x-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full border 
@@ -142,7 +145,7 @@ const Header = () => {
                 {getSubmenuContent(hoveredItem).map((link) => (
                   <a
                     key={link}
-                    href="#"
+                    href="/"
                     className="text-gray-600 hover:text-red-600 text-sm"
                   >
                     {link}
@@ -158,7 +161,7 @@ const Header = () => {
                 </p>
 
                 <a
-                  href="#"
+                  href="/"
                   className="text-red-600 font-semibold text-sm whitespace-nowrap"
                 >
                   View Featured &rarr;

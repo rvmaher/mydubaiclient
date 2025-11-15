@@ -44,6 +44,7 @@ const PodcastSection: React.FC<PodcastSectionProps> = ({
                 stroke="currentColor"
                 strokeWidth={2}
               >
+                <title>Play</title>
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"

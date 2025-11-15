@@ -91,9 +91,10 @@ export default function Carousel() {
           </motion.button>
 
           <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-20">
-            {items.map((_, i) => (
+            {items.map((item, i) => (
               <button
-                key={i}
+                key={item.id}
+                type="button"
                 onClick={() => setIndex(i)}
                 className={`h-2 rounded-full transition-all ${i === index ? "w-8 bg-white" : "w-2 bg-white/50"}`}
                 aria-label={`Go to slide ${i + 1}`}

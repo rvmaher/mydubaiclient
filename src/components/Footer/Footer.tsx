@@ -134,7 +134,7 @@ const Footer: React.FC = () => {
             {Object.entries(socialIcons).map(([key, IconComponent]) => (
               <a
                 key={key}
-                href="#"
+                href="/"
                 aria-label={key}
                 className="hover:text-white transition-colors duration-200"
               >

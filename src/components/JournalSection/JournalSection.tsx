@@ -2,6 +2,7 @@ import Image from "next/image";
 import type React from "react";
 
 interface Article {
+  id?: number;
   date: string;
   title: string;
   summary: string;
@@ -23,6 +24,7 @@ const mainArticle: MainArticle = {
 
 const smallArticles: Article[] = [
   {
+    id: 1,
     date: "05 NOV 2025",
     title:
       "JamesEdition Partners with Compass Luxury to Elevate Visibility for High-End Properties Across t...",
@@ -32,6 +34,7 @@ const smallArticles: Article[] = [
       "https://plus.unsplash.com/premium_photo-1761471068620-5ecaa4780da5?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDR8Ym84alFLVGFFMFl8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=60&w=600", // Placeholder for small image 1
   },
   {
+    id: 2,
     date: "05 NOV 2025",
     title:
       "St. Regis Debuts at Finca Cortesin, Costa del Sol, Marking a New Era of Branded Mediterranean Living",
@@ -41,6 +44,7 @@ const smallArticles: Article[] = [
       "https://images.unsplash.com/photo-1762450127876-515aed711718?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1204", // Placeholder for small image 2
   },
   {
+    id: 3,
     date: "05 NOV 2025",
     title:
       "Four Automotive Milestones: Where Engineering Icons Become Investment Assets",
@@ -51,13 +55,8 @@ const smallArticles: Article[] = [
   },
 ];
 
-const SmallArticleCard: React.FC<Article> = ({
-  date,
-  title,
-  summary,
-  imageUrl,
-}) => (
-  <a href="#" className="flex items-start mb-6 group">
+const SmallArticleCard: React.FC<Article> = ({ date, title, imageUrl }) => (
+  <a href="/" className="flex items-start mb-6 group">
     {imageUrl && (
       <div className="flex-shrink-0 w-28 h-20 relative mr-4">
         <Image
@@ -88,7 +87,7 @@ const JournalSection: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
           <div className="md:col-span-2">
-            <a href="#" className="block group">
+            <a href="/" className="block group">
               <div className="relative w-full aspect-video mb-4 overflow-hidden rounded-md">
                 <Image
                   src={
@@ -114,8 +113,8 @@ const JournalSection: React.FC = () => {
 
           <div className="md:col-span-1 border-t md:border-t-0 md:border-l border-gray-200 pt-6 md:pt-0 md:pl-8">
             <div className="flex flex-col">
-              {smallArticles.map((article, index) => (
-                <SmallArticleCard key={index} {...article} />
+              {smallArticles.map((article) => (
+                <SmallArticleCard key={article.id} {...article} />
               ))}
             </div>
           </div>

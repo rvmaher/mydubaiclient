@@ -26,6 +26,7 @@ const TrendingCard: React.FC<TrendingCardProps> = ({
         />
 
         <button
+          type="button"
           className="absolute top-4 right-4 p-2 bg-white rounded-full shadow-md text-gray-700 hover:text-red-500 hover:scale-110 transition-all duration-200"
           aria-label="Add to favorites"
         >
@@ -37,6 +38,7 @@ const TrendingCard: React.FC<TrendingCardProps> = ({
             stroke="currentColor"
             strokeWidth={2}
           >
+            <title>Favorite</title>
             <path
               strokeLinecap="round"
               strokeLinejoin="round"

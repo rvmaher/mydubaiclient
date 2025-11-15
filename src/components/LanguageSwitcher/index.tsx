@@ -16,18 +16,21 @@ export default function LanguageSwitcher() {
   return (
     <div>
       <button
+        type="button"
         onClick={() => switchLanguage("en")}
         className={lang === "en" ? "font-bold" : ""}
       >
         English
       </button>
       <button
+        type="button"
         onClick={() => switchLanguage("ar")}
         className={lang === "ar" ? "font-bold" : ""}
       >
         العربية
       </button>
       <button
+        type="button"
         onClick={() => switchLanguage("nl")}
         className={lang === "nl" ? "font-bold" : ""}
       >

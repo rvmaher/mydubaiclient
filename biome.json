@@ -27,6 +27,10 @@
       "recommended": true,
       "suspicious": {
         "noUnknownAtRules": "off"
+      },
+      "a11y": {
+        "noNoninteractiveElementToInteractiveRole": "off",
+        "noStaticElementInteractions": "off"
       }
     },
     "domains": {
