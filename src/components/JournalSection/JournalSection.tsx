@@ -63,9 +63,8 @@ const SmallArticleCard: React.FC<Article> = ({ date, title, imageUrl }) => (
         <Image
           src={imageUrl}
           alt={title}
-          layout="fill"
-          objectFit="cover"
-          className="rounded-sm"
+          fill
+          className="rounded-sm object-cover"
         />
       </div>
     )}
@@ -94,9 +93,8 @@ const JournalSection: React.FC = () => {
                   "https://images.unsplash.com/photo-1761839258753-85d8eecbbc29?ixlib=rb-4.1.0&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170"
                 }
                 alt={mainArticle.title}
-                layout="fill"
-                objectFit="cover"
-                className="transition-transform duration-500 group-hover:scale-[1.02]"
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
               />
             </div>
 

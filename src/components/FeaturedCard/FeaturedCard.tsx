@@ -20,9 +20,8 @@ const FeaturedCard: React.FC<FeaturedCardProps> = ({
         <Image
           src={imageUrl}
           alt={title}
-          layout="fill"
-          objectFit="cover"
-          className="transition-transform duration-500 group-hover:scale-102"
+          fill
+          className="object-cover transition-transform duration-500 group-hover:scale-102"
         />
         <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
       </div>

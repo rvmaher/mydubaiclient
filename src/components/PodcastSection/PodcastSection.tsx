@@ -59,8 +59,8 @@ const PodcastSection: React.FC<PodcastSectionProps> = ({
               <Image
                 src={hostImageUrl}
                 alt={`Host ${hostName}`}
-                layout="fill"
-                objectFit="cover"
+                fill
+                className="object-cover"
               />
             </div>
 

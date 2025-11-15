@@ -24,8 +24,8 @@ const TrendingCard: React.FC<TrendingCardProps> = ({
         <Image
           src={imageUrl}
           alt={`${title} in ${location}`}
-          layout="fill"
-          objectFit="cover"
+          fill
+          className="object-cover"
         />
 
         <IconButton
