@@ -1,8 +1,9 @@
 import { useCallback, useEffect, useState } from "react";
 import { FaRegUser as UserIcon } from "react-icons/fa6";
 import { cn } from "@/utils/cn";
+import { SignInForm } from "../features/auth";
 import Modal from "../Modal/Modal";
-import SignInForm from "../SignInForm/SignInForm";
+import { Button } from "../ui";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -88,15 +89,15 @@ const Header = () => {
           </div>
 
           <div className="flex items-center space-x-3 sm:space-x-4">
-            <button
-              type="button"
+            <Button
+              variant="light"
               className={`hidden sm:block text-sm font-semibold transition-colors ${isScrolled ? "text-gray-900" : "text-white"}`}
             >
               Sell With Us
-            </button>
-            <button
-              type="button"
+            </Button>
+            <Button
               onClick={() => setSignIn(true)}
+              variant="alternative"
               className={`
                         flex items-center space-x-1 sm:space-x-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full border 
                         ${
@@ -109,7 +110,7 @@ const Header = () => {
             >
               <UserIcon />
               <span className="hidden sm:inline">Log In</span>
-            </button>
+            </Button>
           </div>
         </div>
 

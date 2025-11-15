@@ -1,6 +1,7 @@
 import Image from "next/image";
 import type React from "react";
 import { IoIosArrowRoundForward as ArrowRoundForwardIcon } from "react-icons/io";
+import { Card } from "../ui";
 
 interface FeaturedCardProps {
   imageUrl: string;
@@ -14,8 +15,8 @@ const FeaturedCard: React.FC<FeaturedCardProps> = ({
   listingsCount,
 }) => {
   return (
-    <div className="relative w-full max-w-sm mx-auto overflow-hidden group cursor-pointer shadow-lg hover:shadow-xl transition-shadow duration-300">
-      <div className="relative w-full pt-[133%]">
+    <Card hover className="relative w-full max-w-sm mx-auto shadow-lg">
+      <div className="relative w-full pt-[133%] overflow-hidden group cursor-pointer">
         <Image
           src={imageUrl}
           alt={title}
@@ -39,7 +40,7 @@ const FeaturedCard: React.FC<FeaturedCardProps> = ({
           <ArrowRoundForwardIcon />
         </div>
       </div>
-    </div>
+    </Card>
   );
 };
 

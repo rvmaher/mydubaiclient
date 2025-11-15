@@ -30,7 +30,8 @@
       },
       "a11y": {
         "noNoninteractiveElementToInteractiveRole": "off",
-        "noStaticElementInteractions": "off"
+        "noStaticElementInteractions": "off",
+        "useSemanticElements": "off"
       }
     },
     "domains": {

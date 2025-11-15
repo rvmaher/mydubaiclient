@@ -7,6 +7,8 @@ import {
   FaTwitter as Twitter,
   FaYoutube as Youtube,
 } from "react-icons/fa";
+import { SOCIAL_LINKS } from "@/constants";
+import { Link } from "../ui";
 
 interface FooterLink {
   label: string;
@@ -70,12 +72,9 @@ const FooterLinkColumn: React.FC<FooterColumn> = ({ title, links }) => (
     <ul className="space-y-3">
       {links.map((link) => (
         <li key={link.label}>
-          <a
-            href={link.href}
-            className="text-gray-400 text-sm hover:text-white transition-colors duration-200"
-          >
+          <Link href={link.href} variant="footer" className="text-sm">
             {link.label}
-          </a>
+          </Link>
         </li>
       ))}
     </ul>
@@ -132,14 +131,15 @@ const Footer: React.FC = () => {
 
           <div className="flex space-x-4 text-gray-400">
             {Object.entries(socialIcons).map(([key, IconComponent]) => (
-              <a
+              <Link
                 key={key}
-                href="/"
-                aria-label={key}
-                className="hover:text-white transition-colors duration-200"
+                href={SOCIAL_LINKS[key as keyof typeof SOCIAL_LINKS] || "/"}
+                variant="footer"
+                external
+                className="inline-flex"
               >
-                <IconComponent className="w-5 h-5" />
-              </a>
+                <IconComponent className="w-5 h-5" aria-label={key} />
+              </Link>
             ))}
           </div>
         </div>

@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import type React from "react";
 import { type ReactNode, useEffect } from "react";
 import { RxCross2 as X } from "react-icons/rx";
+import { IconButton } from "../ui";
 
 interface ModalProps {
   isOpen: boolean;
@@ -46,14 +47,12 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, children }) => {
             className="relative w-full max-w-sm bg-white rounded-lg shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
-            <button
-              type="button"
+            <IconButton
+              icon={<X className="w-6 h-6" />}
               onClick={onClose}
+              ariaLabel={`Close ${title} modal`}
               className="absolute top-4 right-4 text-gray-500 hover:text-gray-900 transition z-10"
-              aria-label={`Close ${title} modal`}
-            >
-              <X className="w-6 h-6" />
-            </button>
+            />
 
             <div className="p-8 pt-10">
               <h2 className="text-2xl font-normal text-gray-900 text-center mb-6">
