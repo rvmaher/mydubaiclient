@@ -91,7 +91,7 @@ const Header = () => {
           <div className="flex items-center space-x-3 sm:space-x-4">
             <Button
               variant="light"
-              className={`hidden sm:block text-sm font-semibold transition-colors ${isScrolled ? "text-gray-900" : "text-white"}`}
+              className={`hidden sm:block text-sm font-semibold transition-colors  text-gray-900`}
             >
               Sell With Us
             </Button>
