@@ -10,8 +10,10 @@ import JournalSection from "@/components/JournalSection/JournalSection";
 import PodcastSection from "@/components/PodcastSection/PodcastSection";
 import ReviewSlider from "@/components/ReviewSlider/ReviewSlider";
 import TrendingCard from "@/components/TrendingCard.tsx/TrendingCard.tsx";
+import { Heading } from "@/components/ui";
+import type { CardItem } from "@/types";
 
-const featuredCardList = [
+const featuredCardList: CardItem[] = [
   {
     id: "1",
     imgUrl: "/images/car_1.png",
@@ -51,9 +53,9 @@ export default function Home() {
       <main className="bg-white-900 font-serif">
         <HeroSection />
         <Container>
-          <h1 className="text-3xl font-bold mb-8 text-gray-900">
+          <Heading level={1} className="mb-8">
             Featured Categories
-          </h1>
+          </Heading>
           <CardListWrapper className="mb-10">
             {featuredCardList.slice(0, 4).map((card) => (
               <FeaturedCard
@@ -66,7 +68,9 @@ export default function Home() {
           </CardListWrapper>
         </Container>
         <Container>
-          <h1 className="text-3xl font-bold mb-8 text-gray-900">Trending</h1>
+          <Heading level={1} className="mb-8">
+            Trending
+          </Heading>
           <CardListWrapper className="mb-10 lg:grid-cols-5">
             {featuredCardList.map((card) => (
               <TrendingCard

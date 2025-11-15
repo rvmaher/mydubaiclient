@@ -1,6 +1,7 @@
 "use client";
 
 import { usePathname, useRouter } from "next/navigation";
+import { cn } from "@/utils/cn";
 import { useLanguage } from "../../context/LanguageContext";
 
 export default function LanguageSwitcher() {
@@ -13,26 +14,34 @@ export default function LanguageSwitcher() {
     router.push(newPath);
   };
 
+  const buttonClass = (isActive: boolean) =>
+    cn(
+      "px-3 py-1 rounded transition-colors",
+      isActive
+        ? "font-bold text-black bg-gray-100"
+        : "text-gray-600 hover:text-black hover:bg-gray-50",
+    );
+
   return (
-    <div>
+    <div className="flex gap-2">
       <button
         type="button"
         onClick={() => switchLanguage("en")}
-        className={lang === "en" ? "font-bold" : ""}
+        className={buttonClass(lang === "en")}
       >
         English
       </button>
       <button
         type="button"
         onClick={() => switchLanguage("ar")}
-        className={lang === "ar" ? "font-bold" : ""}
+        className={buttonClass(lang === "ar")}
       >
         العربية
       </button>
       <button
         type="button"
         onClick={() => switchLanguage("nl")}
-        className={lang === "nl" ? "font-bold" : ""}
+        className={buttonClass(lang === "nl")}
       >
         Nederlands
       </button>

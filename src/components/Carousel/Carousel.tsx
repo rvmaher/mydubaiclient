@@ -61,31 +61,29 @@ export default function Carousel() {
           </motion.div>
 
           <motion.button
+            type="button"
             disabled={index === 0}
-            onClick={() => {
-              setIndex((i) => Math.max(0, i - 1));
-            }}
-            className={`absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center shadow-lg transition-transform z-20 
-                        ${
-                          index === 0
-                            ? "opacity-40 cursor-not-allowed"
-                            : "bg-white text-black hover:scale-110 hover:opacity-100 opacity-70"
-                        }`}
+            onClick={() => setIndex((i) => Math.max(0, i - 1))}
+            className={`absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center shadow-lg transition-transform z-20 ${
+              index === 0
+                ? "opacity-40 cursor-not-allowed"
+                : "bg-white text-black hover:scale-110 hover:opacity-100 opacity-70"
+            }`}
+            aria-label="Previous slide"
           >
             <ArrowBackIcon />
           </motion.button>
 
           <motion.button
+            type="button"
             disabled={index === items.length - 1}
-            onClick={() => {
-              setIndex((i) => Math.min(items.length - 1, i + 1));
-            }}
-            className={`absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center shadow-lg transition-transform z-20
-                        ${
-                          index === items.length - 1
-                            ? "opacity-40 cursor-not-allowed"
-                            : "bg-white text-black hover:scale-110 hover:opacity-100 opacity-70"
-                        }`}
+            onClick={() => setIndex((i) => Math.min(items.length - 1, i + 1))}
+            className={`absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center shadow-lg transition-transform z-20 ${
+              index === items.length - 1
+                ? "opacity-40 cursor-not-allowed"
+                : "bg-white text-black hover:scale-110 hover:opacity-100 opacity-70"
+            }`}
+            aria-label="Next slide"
           >
             <ArrowForwardIcon />
           </motion.button>
